@@ -16,12 +16,13 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "ES6",
+    "module": "CommonJS",
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
-      "dom"
+      "ES6",
+      "DOM",
+      "DOM.Iterable"
     ]
   },
   "angularCompilerOptions": {
