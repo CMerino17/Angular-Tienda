@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { ArticuloListComponent } from './articulo/articulo-list/articulo-list.component';
+import { ArticuloFormComponent } from './articulo/articulo-form/articulo-form.component';
+import { CarouselComponent } from './layouts/carousel/carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { FooterComponent } from './layouts/footer/footer.component';
     HomeComponent,
     NosotrosComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ArticuloListComponent,
+    ArticuloFormComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
