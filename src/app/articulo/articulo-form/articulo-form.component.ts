@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArticuloService } from '../articulo.service'
+import { Articulo } from '../articulo-model'
 
 @Component({
   selector: 'app-articulo-form',
@@ -7,15 +9,38 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./articulo-form.component.scss']
 })
 export class ArticuloFormComponent {
+  
+  articulos: Articulo[] = [];
+  categoria?: string;
 
-  idArticulo?: string;
 
-  constructor(private route: ActivatedRoute){
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private articuloService: ArticuloService
+  ){
 
   }
   
   ngOnInit(){
-    this.idArticulo = this.route.snapshot.paramMap.get('idArticulo') ?? undefined;
+    this.categoria = this.route.snapshot.paramMap.get('categoria') ?? undefined;
+    this.obtenerArticulosRest();
+  }
+
+  public obtenerArticulosRest(): void {
+    this.articuloService.obtenerArticulos().subscribe(
+      (data) => {
+        for (let i = 0; i < data.length; i++) {
+          const articulo: Articulo = new Articulo(data[i].id, data[i].nombre, data[i].precio, data[i].fav,
+            data[i].descripcion, data[i].imagen);
+          this.articulos.push(articulo);
+        }
+      }
+    )
+  }
+
+  public navegarAArticulo(idArticulo: number): void{
+    this.router.navigate(['articulo-desc',idArticulo]);
   }
 
 }

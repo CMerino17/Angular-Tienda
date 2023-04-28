@@ -11,6 +11,7 @@ import { ArticuloListComponent } from './articulo/articulo-list/articulo-list.co
 import { ArticuloFormComponent } from './articulo/articulo-form/articulo-form.component';
 import { CarouselComponent } from './layouts/carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticuloDescComponent } from './articulo/articulo-form/articulo-desc/articulo-desc.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ArticuloListComponent,
     ArticuloFormComponent,
-    CarouselComponent
+    CarouselComponent,
+    ArticuloDescComponent
   ],
   imports: [
     BrowserModule,

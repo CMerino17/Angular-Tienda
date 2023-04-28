@@ -1,7 +1,9 @@
+
 export class Articulo {
     private id: number
     private nombre: string
     private precio: number
+    private fav: boolean
     private descripcion?: string
     private imagen?: string
 
@@ -9,12 +11,14 @@ export class Articulo {
         id: number,
         nombre: string,
         precio: number,
-        descripcion?: string,
-        imagen?: string
+        fav: boolean,
+        descripcion: string,
+        imagen: string
     ) {
         this.id = id
         this.nombre = nombre
         this.precio = precio
+        this.fav = fav
         this.descripcion = descripcion
         this.imagen = imagen
     }
@@ -43,6 +47,14 @@ export class Articulo {
         this.precio = precio
     }
 
+    public isFav(): boolean {
+        return this.fav;
+    }
+
+    public setFav(fav: boolean): void {
+        this.fav = fav;
+    }
+    
     public getDescripcion(): string |undefined {
         return this.descripcion
     }

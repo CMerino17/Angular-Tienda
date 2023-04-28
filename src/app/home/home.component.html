@@ -1,16 +1,19 @@
 <app-carousel></app-carousel>
 <div id="tarjetas">
-    <div class="tarjeta">
-        <img src="{{imagenesTarjetas[0]}}" alt="">
-        <h3>Moda Verano</h3>
-    </div>
-    <div class="tarjeta">
-        <img src="{{imagenesTarjetas[1]}}" alt="">
-        <h3>Moda Invierno</h3>
-    </div>
-    <div class="tarjeta">
-        <img src="{{imagenesTarjetas[2]}}" alt="">
-        <h3>Moda Primavera</h3>
+    <div class="tarjeta" *ngFor="let imagen of imagenesTarjetas">
+        <img src="{{imagen}}" alt="">
     </div>
 </div>
+<div class="tituloModa">
+    <h3 *ngFor="let titulo of tituloModa">{{titulo}}</h3>
+</div>
+<!-- <h2 class="titulo">CATEGORIAS</h2>
+<div class="card-deck">
+    <div class="card" *ngFor="let imagen of imagenesCategorias; let i = index">
+      <img class="card-img-top" src="{{imagen}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{nombreCategoria[i]}}</h5>
+      </div>
+  </div>
+</div> -->
 <app-articulo-list></app-articulo-list>

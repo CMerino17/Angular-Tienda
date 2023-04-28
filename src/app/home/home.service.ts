@@ -14,4 +14,9 @@ export class HomeService {
     const urlTarjetas: string = "http://localhost:3001/tarjetas";
     return this.http.get<IHome[]>(urlTarjetas);
   }
+
+  // public obtenerCategorias(): Observable<IHome[]>{
+  //   const urlCategorias: string = "http://localhost:3001/categorias";
+  //   return this.http.get<IHome[]>(urlCategorias);
+  // }
 }

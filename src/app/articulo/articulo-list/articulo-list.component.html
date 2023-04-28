@@ -1,14 +1,11 @@
-<h1>Lista de articulos</h1>
+<!-- <h1>Lista de articulos</h1> -->
 
-<table>
-    <thead>
-        <th>id</th>
-        <th>Nombre</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let articulo of articulos" (click)="navegarAFicha(articulo.getId())">
-            <td>{{articulo.getId()}}</td>
-            <td>{{articulo.getNombre()}}</td>
-        </tr>
-    </tbody>
-</table>
+<h2 class="titulo">CATEGORIAS</h2>
+<div class="card-deck">
+    <div class="card" *ngFor="let nombre of nombreCategoria; let i = index" (click)="navegarACategoria(nombre)">
+      <img class="card-img-top" src="{{imagenesCategorias[i]}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{nombre}}</h5>
+      </div>
+  </div>
+</div>
