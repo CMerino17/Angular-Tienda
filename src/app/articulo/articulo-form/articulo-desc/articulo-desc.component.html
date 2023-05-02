@@ -1,16 +1,26 @@
-<p>{{idArticulo}}</p>
-<p *ngIf="!articulo">{{idArticulo}}</p>
-
-<div class="card-rows">
-    <div class="card col-3" *ngIf="articulo">
-        ASDSADSADADA
-        <img class="card-img-top" src="{{articulo.getImagen()}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{articulo.getNombre()}}</h5>
-            <p class="precio">{{articulo.getPrecio() | currency:'EUR':true}}</p>
+<div class="card" *ngIf="articulo">
+    <img class="card-img-top" src="{{articulo.getImagen()}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{articulo.getNombre()}}</h5>
+        <p class="precio">{{articulo.getPrecio() | currency:'EUR':true}}</p>
+    </div>
+    <div class="favorito" *ngIf="articulo.isFav()"><i class="fa-solid fa-heart fa-2xl"></i></div>
+    <div class="favorito"><i class="fa-regular fa-heart fa-2xl"></i></div>
+    <h6 class="tit6">Color:</h6>
+    <img class="imgEscalada" src="{{articulo.getImagen()}}" alt="Card image cap">
+    <h6 class="tit7">Tallas disponibles:</h6>
+    <div id="cajaTallas">
+        <div class="tallas" *ngFor="let talla of tallas">
+            <div>{{talla}}</div>
         </div>
-        <div class="favorito" *ngIf="articulo.isFav()"><i class="fa-solid fa-heart fa-2xl"></i></div>
-        <div class="favorito"><i class="fa-regular fa-heart fa-2xl"></i></div>
     </div>
 </div>
+<div class="botones">
+    <button id="boton1">Comprar</button>
+    <button id="boton2">Lista de deseados</button>
+</div>
 
+
+
+
+<!-- <div class="card col-3" *ngFor="let articulo of articulos" -->

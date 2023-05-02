@@ -4,6 +4,10 @@ export class Articulo {
     private nombre: string
     private precio: number
     private fav: boolean
+    private S: boolean
+    private M: boolean
+    private L: boolean
+    private XL: boolean
     private descripcion?: string
     private imagen?: string
 
@@ -13,7 +17,11 @@ export class Articulo {
         precio: number,
         fav: boolean,
         descripcion: string,
-        imagen: string
+        imagen: string,
+        S: boolean,
+        M: boolean,
+        L: boolean,
+        XL: boolean,
     ) {
         this.id = id
         this.nombre = nombre
@@ -21,6 +29,10 @@ export class Articulo {
         this.fav = fav
         this.descripcion = descripcion
         this.imagen = imagen
+        this.S = S
+        this.M = M
+        this.L = L
+        this.XL = XL
     }
 
     public getId(): number {
@@ -69,6 +81,38 @@ export class Articulo {
 
     public setImagen(imagen: string): void {
         this.imagen = imagen
+    }
+
+    public isS(): boolean {
+        return this.S;
+    }
+
+    public setS(S: boolean): void {
+        this.S = S;
+    }
+
+    public isM(): boolean {
+        return this.M;
+    }
+
+    public setM(M: boolean): void {
+        this.M = M;
+    }
+
+    public isL(): boolean {
+        return this.L;
+    }
+
+    public setL(L: boolean): void {
+        this.L = L;
+    }
+
+    public isXL(): boolean {
+        return this.XL;
+    }
+
+    public setXL(XL: boolean): void {
+        this.XL = XL;
     }
 
 }

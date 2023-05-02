@@ -7,5 +7,10 @@ export interface IArticulo {
   id: number;
   nombreCategoria: string;
   imagenCategoria: string;
+  tallas: boolean[];
+  S: boolean;
+  M: boolean;
+  L: boolean;
+  XL: boolean;
 
 }7

@@ -34,6 +34,9 @@
             margin-top: 15px;
         }
     }
+    .card:hover{
+        cursor: pointer;
+    }
     .card:nth-child(3){
         .precio{
           color: silver;

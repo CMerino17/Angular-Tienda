@@ -13,7 +13,6 @@ export class ArticuloFormComponent {
   articulos: Articulo[] = [];
   categoria?: string;
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -32,7 +31,7 @@ export class ArticuloFormComponent {
       (data) => {
         for (let i = 0; i < data.length; i++) {
           const articulo: Articulo = new Articulo(data[i].id, data[i].nombre, data[i].precio, data[i].fav,
-            data[i].descripcion, data[i].imagen);
+            data[i].descripcion, data[i].imagen, data[i].S,data[i].M,data[i].L,data[i].XL);
           this.articulos.push(articulo);
         }
       }
